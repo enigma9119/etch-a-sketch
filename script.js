@@ -47,4 +47,21 @@ function addHoverListener(element) {
   });
 }
 
+function eraseCurrentGrid() {
+  const containerChildren = document.querySelector(".container").children;
+
+  for (let child of Array.from(containerChildren)) {
+    child.remove();
+  }
+}
+
 createGrid();
+
+// Create new grid when requested by user
+const gridSizeButton = document.querySelector("button");
+gridSizeButton.addEventListener("click", (e) => {
+  dimensions = prompt("Enter number of squares per side (limit = 100)", 16);
+
+  eraseCurrentGrid();
+  createGrid(dimensions);
+});
