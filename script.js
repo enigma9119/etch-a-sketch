@@ -60,7 +60,12 @@ createGrid();
 // Create new grid when requested by user
 const gridSizeButton = document.querySelector("button");
 gridSizeButton.addEventListener("click", (e) => {
-  dimensions = prompt("Enter number of squares per side (limit = 100)", 16);
+  dimensions = +prompt("Enter number of squares per side (limit = 100)", 16);
+  if (dimensions > 100) dimensions = 100;
+  if (!Number.isInteger(dimensions) || dimensions <= 0) {
+    alert("Invalid Number!");
+    return;
+  }
 
   eraseCurrentGrid();
   createGrid(dimensions);
