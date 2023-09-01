@@ -6,7 +6,6 @@
 
 body {
   display: flex;
-  height: 100vh;
   justify-content: center;
   align-items: center;
   background-color: rgb(204, 192, 192);
@@ -15,7 +14,7 @@ body {
 .container {
   display: flex;
   height: 100vh;
-  flex-basis: 100vw;
+  width: 100vw;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
