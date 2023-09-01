@@ -21,6 +21,7 @@ function createGrid(dimensions = NUM_SQUARES_PER_ROW_AND_COLUMN) {
       square.style.backgroundColor = "honeydew";
       square.style.border = "1px solid black";
 
+      addHoverListener(square);
       container.appendChild(square);
     }
   }
@@ -34,6 +35,16 @@ function resizeGrid(e) {
   } else {
     container.style.flexDirection = "column";
   }
+}
+
+function addHoverListener(element) {
+  element.addEventListener("mouseenter", (e) => {
+    e.target.style.backgroundColor = "brown";
+  });
+  element.addEventListener("mouseleave", (e) => {
+    e.target.style.backgroundColor = "honeydew";
+    e.target.style.transitionDuration = "1s";
+  });
 }
 
 createGrid();
